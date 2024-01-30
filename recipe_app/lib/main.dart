@@ -3,6 +3,7 @@ import 'package:recipe_app/features/front/first.dart';
 
 import 'theme/apptheme.dart';
 
+final appname = 'Recipe App';
 final ColorScheme lColorScheme = ColorScheme.fromSwatch(
     primarySwatch: Colors.cyan, brightness: Brightness.light);
 final ColorScheme dColorScheme = ColorScheme.fromSwatch(
@@ -18,7 +19,7 @@ class Recipe_App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Recipe App',
+      title: appname,
       debugShowCheckedModeBanner: false,
       theme: Apptheme.lighttheme,
       darkTheme: Apptheme.darktheme,

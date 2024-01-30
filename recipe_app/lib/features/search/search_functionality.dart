@@ -39,6 +39,7 @@ class Search extends StatelessWidget {
             ),
           ),
         ),
+        Expanded(child: ListView())
       ],
     );
   }
