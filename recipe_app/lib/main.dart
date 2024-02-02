@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:recipe_app/features/front/first.dart';
 
+import 'features/recipe_listings/list.dart';
 import 'theme/apptheme.dart';
 
 final appname = 'Recipe App';
@@ -24,7 +25,8 @@ class Recipe_App extends StatelessWidget {
       theme: Apptheme.lighttheme,
       darkTheme: Apptheme.darktheme,
       themeMode: ThemeMode.system,
-      home: const FirstScreen(),
+      home: FirstScreen(),
+      // RecipeList(),
     );
   }
 }

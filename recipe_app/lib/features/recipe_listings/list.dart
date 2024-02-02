@@ -9,14 +9,15 @@ class RecipeList extends StatefulWidget {
 }
 
 class _RecipeListState extends State<RecipeList> {
-  static List<RecipeModel> main_recipe_list = [
+  static List<RecipeModel> all_recipe_list = [
     RecipeModel(
-        "",
+        "assets/1_Butter.jpg",
         "Butter Chicken",
         4,
         ["500g chicken", "1 cup yogurt", "2 tbsp butter", "1 cup tomato puree"],
         "Instructions: ..."),
     RecipeModel(
+        "assets/2_paneer.jpg",
         "Paneer Tikka",
         5,
         [
@@ -27,6 +28,7 @@ class _RecipeListState extends State<RecipeList> {
         ],
         "Instructions: ..."),
     RecipeModel(
+        "assets/3_briyani.jpg",
         "Biryani",
         6,
         [
@@ -38,6 +40,7 @@ class _RecipeListState extends State<RecipeList> {
         ],
         "Instructions: ..."),
     RecipeModel(
+        "assets/4_masala_dosa.jpg",
         "Masala Dosa",
         5,
         [
@@ -49,6 +52,7 @@ class _RecipeListState extends State<RecipeList> {
         ],
         "Instructions: ..."),
     RecipeModel(
+        "assets/5_palak_paneer.jpg",
         "Palak Paneer",
         5,
         [
@@ -60,6 +64,7 @@ class _RecipeListState extends State<RecipeList> {
         ],
         "Instructions: ..."),
     RecipeModel(
+        "assets/6_chole_bhature.jpg",
         "Chole Bhature",
         5,
         [
@@ -71,99 +76,34 @@ class _RecipeListState extends State<RecipeList> {
         ],
         "Instructions: ..."),
     RecipeModel(
+        "assets/7_Aloogobi.jpg",
         "Aloo Gobi",
         4,
         ["2 potatoes", "1 cauliflower", "1 tsp turmeric", "1 tsp cumin powder"],
         "Instructions: ..."),
-    // RecipeModel(
-    //     "Chicken Curry",
-    //     5,
-    //     [
-    //       "500g chicken",
-    //       "1 cup coconut milk",
-    //       "2 onions",
-    //       "3 tomatoes",
-    //       "1 tsp coriander powder"
-    //     ],
-    //     "Instructions,: ..."),
-    // RecipeModel(
-    //     "Rajma",
-    //     4,
-    //     [
-    //       "1 cup kidney beans",
-    //       "1 onion",
-    //       "2 tomatoes",
-    //       "1 tsp ginger-garlic paste"
-    //     ],
-    //     "Instructions: ..."),
-    // RecipeModel(
-    //     "Samosa",
-    //     6,
-    //     [
-    //       "2 cups all-purpose flour",
-    //       "2 potatoes",
-    //       "1 cup green peas",
-    //       "1 tsp garam masala",
-    //       "1/2 tsp cumin seeds"
-    //     ],
-    //     "Instructions: ..."),
-    // RecipeModel(
-    //     "Dal Tadka",
-    //     4,
-    //     [
-    //       "1 cup yellow lentils",
-    //       "1 onion",
-    //       "2 tomatoes",
-    //       "1 tsp mustard seeds"
-    //     ],
-    //     "Instructions: ..."),
-    // RecipeModel(
-    //     "Fish Curry",
-    //     5,
-    //     [
-    //       "500g fish",
-    //       "1 cup tamarind pulp",
-    //       "2 onions",
-    //       "3 tomatoes",
-    //       "1 tsp red chili powder"
-    //     ],
-    //     "Instructions: ..."),
-    // RecipeModel(
-    //     "Vada Pav",
-    //     5,
-    //     [
-    //       "2 cups gram flour",
-    //       "4 potatoes",
-    //       "1 tsp mustard seeds",
-    //       "4 pav buns"
-    //     ],
-    //     "Instructions: ..."),
-    // RecipeModel(
-    //     "Chicken Biryani",
-    //     6,
-    //     [
-    //       "2 cups basmati rice",
-    //       "500g chicken",
-    //       "1 cup fried onions",
-    //       "4 cloves",
-    //       "2 cardamom pods"
-    //     ],
-    //     "Instructions: ..."),
-    // RecipeModel(
-    //     "Mutton Rogan Josh",
-    //     6,
-    //     [
-    //       "500g mutton",
-    //       "1 cup yogurt",
-    //       "2 onions",
-    //       "3 tomatoes",
-    //       "1 tsp fennel powder"
-    //     ],
-    //     "Instructions: ..."),
   ];
+
+  List<RecipeModel> filtered_list = List.from(all_recipe_list);
 
   @override
   Widget build(BuildContext context) {
-    return ListView();
+    return ListView.builder(
+      itemCount: filtered_list.length,
+      itemBuilder: (context, index) => ListTile(
+        title: Text(
+          filtered_list[index].recipe_name!,
+          style: Theme.of(context).textTheme.titleLarge,
+        ),
+        subtitle: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemCount: filtered_list[index].recipe_ingredients!.length,
+          itemBuilder: (BuildContext cxt, i) {
+            Text(
+              filtered_list[index].recipe_ingredients![i],
+            );
+          },
+        ),
+      ),
+    );
   }
 }

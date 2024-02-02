@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:recipe_app/features/front/first.dart';
+import 'package:recipe_app/features/recipe_listings/list.dart';
 
 class Search extends StatelessWidget {
   const Search({super.key});
@@ -15,13 +17,14 @@ class Search extends StatelessWidget {
           " Search for Recipes ",
           style: Theme.of(context).textTheme.displaySmall,
         ),
-        SizedBox(
-          height: 20,
-        ),
+        // SizedBox(
+        //   height: 60,
+        // ),
         TextField(
+          // onChanged: (value) => FirstScreen.,
           decoration: InputDecoration(
             prefixIcon: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 19),
+              padding: EdgeInsets.symmetric(horizontal: 10),
               child: Icon(Icons.search),
             ),
             hintText: "eg. momos,pasta,....",
@@ -39,7 +42,6 @@ class Search extends StatelessWidget {
             ),
           ),
         ),
-        Expanded(child: ListView())
       ],
     );
   }
