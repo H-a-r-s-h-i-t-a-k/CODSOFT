@@ -9,7 +9,7 @@ class UpwardAnimationController extends GetxController {
   Future startAnimate() async {
     await Future.delayed(const Duration(milliseconds: 500));
     animate.value = true; //can't assign bool   only take .value
-    await Future.delayed(const Duration(milliseconds: 4000));
+    await Future.delayed(const Duration(seconds: 100));
     animate.value = false; //can't assign bool   only take .value
     await Future.delayed(const Duration(milliseconds: 2000));
     Get.offAll(() => FirstScreen());

@@ -7,7 +7,7 @@ import 'theme/apptheme.dart';
 
 final appname = 'Recipe App';
 final ColorScheme lColorScheme = ColorScheme.fromSwatch(
-    primarySwatch: Colors.cyan, brightness: Brightness.light);
+    primarySwatch: Colors.orange, brightness: Brightness.light);
 final ColorScheme dColorScheme = ColorScheme.fromSwatch(
     primarySwatch: Colors.blueGrey, brightness: Brightness.dark);
 void main() {
